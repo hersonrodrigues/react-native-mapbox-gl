@@ -9,7 +9,9 @@
     "pack:gl": "./scripts/npm_pack_rngl.sh",
     "clean:node:modules": "./scripts/clean_node_modules.sh",
     "preinstall": "npm run pack:gl",
-    "postinstall": "node ./scripts/set_access_token.js"
+    "postinstall": "node ./scripts/set_access_token.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@mapbox/geo-viewport": "^0.2.2",
@@ -29,7 +31,8 @@
     "react-native": "^0.53.0",
     "react-native-elements": "^0.16.0",
     "react-native-vector-icons": "^4.3.0",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-preset-react-native": "^4.0.0",
@@ -37,5 +40,6 @@
     "minimatch": "^3.0.4",
     "node-watch": "^0.5.5",
     "rimraf": "^2.6.1"
-  }
+  },
+  "snyk": true
 }
